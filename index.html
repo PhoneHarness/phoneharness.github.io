@@ -275,6 +275,9 @@
     .result-card:first-child { border-left: none; padding-left: 0; }
     .metric { font-family: var(--font-display); color: var(--accent); font-size: 2.9rem; line-height: 1; font-weight: 500; margin: 10px 0; }
     .small-note { color: var(--faint); font-size: 0.72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+    .result-block { margin-top: 24px; }
+    .result-block h3 { margin-bottom: 6px; }
+    .result-block p { color: var(--muted); font-size: 0.92rem; }
 
     table {
       width: 100%;
@@ -450,25 +453,29 @@
         </div>
       </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Agent</th>
-            <th>Overall</th>
-            <th>Device/system</th>
-            <th>Single-app GUI</th>
-            <th>Tool-assisted</th>
-            <th>Cross-app</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td rowspan="2">Model</td><td>AutoGLM-Phone</td><td>37.1%</td><td>43.3%</td><td>43.3%</td><td>20.0%</td><td>44.8%</td></tr>
-          <tr><td>Seed-Pro-2.0</td><td>62.1%</td><td>83.3%</td><td><strong>76.7%</strong></td><td>28.6%</td><td><strong>65.5%</strong></td></tr>
-          <tr><td rowspan="2">Harness</td><td>MobileClaw</td><td>62.1%</td><td>93.3%</td><td>63.3%</td><td>48.6%</td><td>44.8%</td></tr>
-          <tr><td><strong>PhoneClaw</strong></td><td><strong>75.0%</strong></td><td><strong>96.7%</strong></td><td>63.3%</td><td><strong>74.3%</strong></td><td><strong>65.5%</strong></td></tr>
-        </tbody>
-      </table>
+      <div class="result-block">
+        <h3>Different agent systems on PhoneClawBench</h3>
+        <p>Pass-rate scores on the annotated evaluation split, grouped by task type.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Agent</th>
+              <th>Overall</th>
+              <th>Device/system</th>
+              <th>Single-app GUI</th>
+              <th>Tool-assisted</th>
+              <th>Cross-app</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="2">Model</td><td>AutoGLM-Phone</td><td>37.1%</td><td>43.3%</td><td>43.3%</td><td>20.0%</td><td>44.8%</td></tr>
+            <tr><td>Seed-Pro-2.0</td><td>62.1%</td><td>83.3%</td><td><strong>76.7%</strong></td><td>28.6%</td><td><strong>65.5%</strong></td></tr>
+            <tr><td rowspan="2">Harness</td><td>MobileClaw</td><td>62.1%</td><td>93.3%</td><td>63.3%</td><td>48.6%</td><td>44.8%</td></tr>
+            <tr><td><strong>PhoneClaw</strong></td><td><strong>75.0%</strong></td><td><strong>96.7%</strong></td><td>63.3%</td><td><strong>74.3%</strong></td><td><strong>65.5%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
 
       <div class="grid-3">
         <div class="figure-card">
@@ -483,6 +490,55 @@
           <img src="./assets/figures/action-type-success.png?v=c7c23c0" alt="Pass rate by action-space type" />
           <h3>Action-space breakdown</h3>
         </div>
+      </div>
+
+      <div class="result-block">
+        <h3>Different model pairings on PhoneClawBench</h3>
+        <p>Same-harness API pairing results over 131 completed tasks, separating app-required and no-app tasks.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Orchestration model</th>
+              <th>GUI model</th>
+              <th>Overall</th>
+              <th>App-required Tasks</th>
+              <th>No-App Tasks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Seed 2.0</td><td>Seed 2.0</td><td>51.9%</td><td>50.0%</td><td>55.6%</td></tr>
+            <tr><td>HY3-preview</td><td>Seed 2.0</td><td>52.7%</td><td>52.3%</td><td>53.3%</td></tr>
+            <tr><td>HY3-preview</td><td>AutoGLM-9B</td><td>55.0%</td><td>53.5%</td><td>57.8%</td></tr>
+            <tr><td>DeepSeek V4 flash</td><td>Seed 2.0</td><td><strong>61.8%</strong></td><td>59.3%</td><td><strong>66.7%</strong></td></tr>
+            <tr><td>DeepSeek V4 flash</td><td>AutoGLM-9B</td><td><strong>61.8%</strong></td><td><strong>60.5%</strong></td><td>64.4%</td></tr>
+          </tbody>
+        </table>
+        <div class="figure-card">
+          <img src="./assets/figures/api-pairing-success.png?v=20260511" alt="Pass rate by same-harness model pairing" />
+          <h3>Pass rate by same-harness model pairing</h3>
+          <p>DeepSeek V4 flash is the strongest outer controller under both GUI workers, while GUI-worker choice has smaller impact than orchestration-model choice.</p>
+        </div>
+      </div>
+
+      <div class="result-block">
+        <h3>Safety behavior on PhoneClawBench</h3>
+        <p>Dangerous-action refusal rate on safety-oriented tasks. Higher is better.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Orchestration model</th>
+              <th>GUI model</th>
+              <th>Refusal rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>DeepSeek V4</td><td>AutoGLM-9B</td><td>80.0%</td></tr>
+            <tr><td>DeepSeek V4</td><td>Seed 2.0</td><td>86.7%</td></tr>
+            <tr><td>Seed 2.0</td><td>Seed 2.0</td><td>86.7%</td></tr>
+            <tr><td>HY3-preview</td><td>AutoGLM-9B</td><td><strong>90.0%</strong></td></tr>
+            <tr><td>HY3-preview</td><td>Seed 2.0</td><td><strong>90.0%</strong></td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
