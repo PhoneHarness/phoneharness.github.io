@@ -313,7 +313,23 @@
     .figure-card h3 { margin-top: 12px; }
     .figure-card p { margin-top: 8px; font-size: 0.9rem; color: var(--muted); }
 
-    .trace img { border-radius: 2px; width: 100%; display: block; border: 1px solid var(--line); background: white; }
+    .trace-showcase { display: grid; gap: 18px; margin-top: 20px; }
+    .trace-card {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      background: transparent;
+    }
+    .trace-card video,
+    .trace-card img {
+      border-radius: 2px;
+      width: 100%;
+      display: block;
+      border: 1px solid var(--line);
+      background: white;
+    }
+    .trace-card h3 { margin-top: 10px; }
+    .trace-card p { margin-top: 6px; font-size: 0.9rem; color: var(--muted); }
+    .trace-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
     .footer {
       margin-top: 28px;
       text-align: center;
@@ -330,6 +346,7 @@
       .hero-main { padding: 18px 0; }
       .visual-caption { grid-template-columns: 1fr; }
       .mini { border-left: none; border-top: 1px solid var(--line); padding-left: 0; }
+      .trace-grid { grid-template-columns: 1fr; }
       table { font-size: 12px; }
       th, td { padding: 8px; }
     }
@@ -472,9 +489,34 @@
     <section id="traces" class="card section">
       <span class="pill">Trace Evidence</span>
       <h2>Representative executions show GUI, CLI, and tool actions interleaving with verifier checks.</h2>
-      <p class="lede">Rather than only reporting final answers, PhoneClaw records trajectories with selected screenshots, compact non-GUI operation cards, and verifier-side success signals.</p>
-      <div class="trace">
-        <img src="./assets/figures/trace-cases.png?v=c7c23c0" alt="Representative PhoneClaw traces" />
+      <p class="lede">Rather than only reporting final answers, PhoneClaw records executable trajectories with selected screenshots, compact non-GUI operation cards, and verifier-side success signals. The clips below are generated from real trace artifacts.</p>
+      <div class="trace-showcase">
+        <article class="trace-card">
+          <video autoplay muted loop playsinline controls preload="metadata" aria-label="PhoneClaw MCP plus GUI medicine-price trajectory">
+            <source src="./assets/traces/phoneclaw-demo-02-hybrid-medicine-price.mp4?v=20260511" type="video/mp4" />
+            <img src="./assets/traces/phoneclaw-demo-02-hybrid-medicine-price.gif?v=20260511" alt="PhoneClaw MCP plus GUI medicine-price trajectory" />
+          </video>
+          <h3>MCP web search + GUI delegation + verifier</h3>
+          <p>A medicine-price task is decomposed into tool lookup and GUI app exploration, then checked by composite verifier signals.</p>
+        </article>
+        <div class="trace-grid">
+          <article class="trace-card">
+            <video autoplay muted loop playsinline controls preload="metadata" aria-label="PhoneClaw CLI-first device-status trajectory">
+              <source src="./assets/traces/phoneclaw-demo-01-cli-status.mp4?v=20260511" type="video/mp4" />
+              <img src="./assets/traces/phoneclaw-demo-01-cli-status.gif?v=20260511" alt="PhoneClaw CLI-first device-status trajectory" />
+            </video>
+            <h3>CLI-first device status probe</h3>
+            <p>For deterministic phone-state queries, the agent routes directly through device-side commands instead of opening the GUI.</p>
+          </article>
+          <article class="trace-card">
+            <video autoplay muted loop playsinline controls preload="metadata" aria-label="PhoneClaw background GUI trajectory on a virtual display">
+              <source src="./assets/traces/phoneclaw-demo-03-virtual-display.mp4?v=20260511" type="video/mp4" />
+              <img src="./assets/traces/phoneclaw-demo-03-virtual-display.gif?v=20260511" alt="PhoneClaw background GUI trajectory on a virtual display" />
+            </video>
+            <h3>Background GUI on a virtual display</h3>
+            <p>The agent runs a GUI task on a secondary display while the user's foreground screen remains unchanged.</p>
+          </article>
+        </div>
       </div>
     </section>
 

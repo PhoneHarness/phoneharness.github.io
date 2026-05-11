@@ -1,6 +1,6 @@
-# HY-PhoneClaw Project Page
+# PhoneClaw Project Page
 
-Static GitHub Pages site for HY-PhoneClaw and PhoneClaw-Bench.
+Static GitHub Pages site for PhoneClaw and PhoneClaw-Bench.
 
 ## Local Preview
 
@@ -15,6 +15,7 @@ Then open `http://localhost:8080`.
 - `index.html`: single-page project homepage.
 - `assets/paper.pdf`: current paper PDF snapshot.
 - `assets/figures/`: project figures exported for the website.
+- `assets/traces/`: dynamic trajectory media exported for the website.
 
 ## Deployment
 
