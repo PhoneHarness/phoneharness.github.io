@@ -1,6 +1,6 @@
 # PhoneClaw Project Page
 
-Static GitHub Pages site for PhoneClaw and PhoneClaw-Bench.
+Static GitHub Pages site for PhoneClaw and PhoneClaw Bench.
 
 ## Local Preview
 
