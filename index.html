@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PhoneClaw: A Mixed-Action Orchestration Harness and Benchmark for Phone Agents across CLI, GUI, and MCP Tools</title>
-  <meta name="description" content="PhoneClaw is a mixed-action orchestration harness and benchmark for phone agents across CLI, GUI, and MCP tools. PhoneClaw Bench evaluates verifiable mobile workflows with trace-backed side effects." />
-  <meta name="keywords" content="PhoneClaw, PhoneClaw Bench, phone agent, mobile agent, benchmark, CLI, GUI, MCP, tool actions, verifier, trace evaluation" />
-  <meta property="og:title" content="PhoneClaw: A Mixed-Action Orchestration Harness and Benchmark for Phone Agents across CLI, GUI, and MCP Tools" />
+  <title>PhoneHarness: A Mixed-Action Orchestration Harness and Benchmark for Phone Agents across CLI, GUI, and MCP Tools</title>
+  <meta name="description" content="PhoneHarness is a mixed-action orchestration harness and benchmark for phone agents across CLI, GUI, and MCP tools. PhoneHarness Bench evaluates verifiable mobile workflows with trace-backed side effects." />
+  <meta name="keywords" content="PhoneHarness, PhoneHarness Bench, phone agent, mobile agent, benchmark, CLI, GUI, MCP, tool actions, verifier, trace evaluation" />
+  <meta property="og:title" content="PhoneHarness: A Mixed-Action Orchestration Harness and Benchmark for Phone Agents across CLI, GUI, and MCP Tools" />
   <meta property="og:description" content="A phone-agent orchestration harness and benchmark for verifiable mixed-action mobile workflows across CLI, GUI, and MCP tools." />
   <meta property="og:type" content="website" />
   <meta name="robots" content="index, follow" />
@@ -18,12 +18,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "name": "PhoneClaw Bench",
-    "alternateName": ["PhoneClaw Bench", "PhoneClaw Benchmark"],
-    "description": "PhoneClaw Bench evaluates phone agents on verifiable mobile workflows that may require CLI commands, GUI delegation, and MCP-style host tools. The benchmark is built on PhoneClaw, a mixed-action phone-agent harness with trace logging and verifier-backed side-effect checks.",
+    "name": "PhoneHarness Bench",
+    "alternateName": ["PhoneHarness Bench", "PhoneHarness Benchmark"],
+    "description": "PhoneHarness Bench evaluates phone agents on verifiable mobile workflows that may require CLI commands, GUI delegation, and MCP-style host tools. The benchmark is built on PhoneHarness, a mixed-action phone-agent harness with trace logging and verifier-backed side-effect checks.",
     "creator": {
       "@type": "Organization",
-      "name": "PhoneClaw"
+      "name": "PhoneHarness"
     },
     "keywords": ["phone agent", "mobile agent", "mixed action space", "CLI", "GUI", "MCP", "benchmark", "verifier"],
     "measurementTechnique": "Execution-based phone-agent evaluation with deterministic and trace-backed verifiers",
@@ -415,7 +415,7 @@
 <body>
   <main class="page">
     <nav class="nav">
-      <a class="nav-logo" href="#">PhoneClaw</a>
+      <a class="nav-logo" href="#">PhoneHarness</a>
       <div class="nav-links">
         <a href="#overview">Overview</a>
         <a href="#benchmark">Benchmark</a>
@@ -427,15 +427,15 @@
     <section class="hero">
       <div class="card hero-main">
         <div class="eyebrow">Phone-Agent Harness + Benchmark</div>
-        <h1 class="hero-title"><span>PhoneClaw</span>: A Mixed-Action Orchestration Harness and Benchmark for Phone Agents across CLI, GUI, and MCP Tools</h1>
-        <p class="lede">This project contributes two linked artifacts: PhoneClaw Harness for mixed-action phone-agent execution, and PhoneClaw Bench, a benchmark built on the harness to evaluate verifiable mobile workflows.</p>
+        <h1 class="hero-title"><span>PhoneHarness</span>: A Mixed-Action Orchestration Harness and Benchmark for Phone Agents across CLI, GUI, and MCP Tools</h1>
+        <p class="lede">This project contributes two linked artifacts: PhoneHarness for mixed-action phone-agent execution, and PhoneHarness Bench, a benchmark built on the harness to evaluate verifiable mobile workflows.</p>
         <div class="artifact-pair">
           <div class="artifact-card">
-            <strong>PhoneClaw Harness</strong>
+            <strong>PhoneHarness</strong>
             <span>A mixed-action execution harness that routes phone-agent work across device-side CLI, delegated GUI control, and MCP-style host tools.</span>
           </div>
           <div class="artifact-card">
-            <strong>PhoneClaw Bench</strong>
+            <strong>PhoneHarness Bench</strong>
             <span>A benchmark constructed on top of the harness, using observable side effects and trace-backed checks to verify task completion.</span>
           </div>
         </div>
@@ -462,12 +462,12 @@
 
       <div class="card hero-visual">
         <div class="visual-frame">
-          <img src="./assets/figures/architecture.png?v=c7c23c0" alt="PhoneClaw host-device architecture" />
+          <img src="./assets/figures/architecture.png?v=c7c23c0" alt="PhoneHarness host-device architecture" />
         </div>
         <div class="visual-caption">
           <div class="mini"><strong>124</strong><span>scored tasks</span></div>
           <div class="mini"><strong>30</strong><span>app scenarios</span></div>
-          <div class="mini"><strong>75.0%</strong><span>PhoneClaw pass rate</span></div>
+          <div class="mini"><strong>75.0%</strong><span>PhoneHarness pass rate</span></div>
         </div>
       </div>
     </section>
@@ -475,7 +475,7 @@
     <section id="overview" class="card section">
       <span class="pill">Why Mixed Action Spaces?</span>
       <h2>Phone workflows are not just screen navigation.</h2>
-      <p class="lede">Real mobile tasks often combine app navigation, local device operations, file handling, email, calendar, web lookup, and safety-sensitive side effects. PhoneClaw keeps the phone as the stateful execution surface, but exposes multiple action surfaces so agents can choose the right path instead of forcing every task through GUI taps.</p>
+      <p class="lede">Real mobile tasks often combine app navigation, local device operations, file handling, email, calendar, web lookup, and safety-sensitive side effects. PhoneHarness keeps the phone as the stateful execution surface, but exposes multiple action surfaces so agents can choose the right path instead of forcing every task through GUI taps.</p>
       <div class="grid-3">
         <div class="feature">
           <span class="pill">CLI</span>
@@ -496,7 +496,7 @@
     </section>
 
     <section id="benchmark" class="card section">
-      <span class="pill">PhoneClaw Bench</span>
+      <span class="pill">PhoneHarness Bench</span>
       <h2>A benchmark built on the same harness that executes the tasks.</h2>
       <p class="lede">The benchmark is organized around mock-app tasks, real-app tasks, safety tasks, and a scored 124-task split over 30 app scenarios. Each task has a natural-language prompt, execution protocol, trace logging, and one or more verifiers for checking whether the expected side effect actually happened.</p>
       <div class="grid-2">
@@ -508,7 +508,7 @@
         <div class="figure-card">
           <img src="./assets/figures/action-space.png?v=c7c23c0" alt="Mixed action space over CLI, GUI, and MCP tools" />
           <h3>Action surfaces</h3>
-          <p>PhoneClaw exposes CLI, GUI, and MCP-style tools inside one phone-agent loop, enabling deterministic-first routing when appropriate.</p>
+          <p>PhoneHarness exposes CLI, GUI, and MCP-style tools inside one phone-agent loop, enabling deterministic-first routing when appropriate.</p>
         </div>
       </div>
     </section>
@@ -520,7 +520,7 @@
         <div class="result-card">
           <div class="small-note">Overall pass rate</div>
           <div class="metric">75.0%</div>
-          <p>PhoneClaw outperforms the strongest non-PhoneClaw settings by 12.9 percentage points on the annotated split.</p>
+          <p>PhoneHarness outperforms the strongest non-PhoneHarness settings by 12.9 percentage points on the annotated split.</p>
         </div>
         <div class="result-card">
           <div class="small-note">Device/system operations</div>
@@ -535,7 +535,7 @@
       </div>
 
       <div class="result-block">
-        <h3>Different agent systems on PhoneClaw Bench</h3>
+        <h3>Different agent systems on PhoneHarness Bench</h3>
         <p>Pass-rate scores on the annotated evaluation split, grouped by task type.</p>
         <table>
           <thead>
@@ -553,7 +553,7 @@
             <tr><td rowspan="2">Model</td><td>AutoGLM-Phone</td><td>37.1%</td><td>43.3%</td><td>43.3%</td><td>20.0%</td><td>44.8%</td></tr>
             <tr><td>Seed-Pro-2.0</td><td>62.1%</td><td>83.3%</td><td><strong>76.7%</strong></td><td>28.6%</td><td><strong>65.5%</strong></td></tr>
             <tr><td rowspan="2">Harness</td><td>MobileClaw</td><td>62.1%</td><td>93.3%</td><td>63.3%</td><td>48.6%</td><td>44.8%</td></tr>
-            <tr><td><strong>PhoneClaw</strong></td><td><strong>75.0%</strong></td><td><strong>96.7%</strong></td><td>63.3%</td><td><strong>74.3%</strong></td><td><strong>65.5%</strong></td></tr>
+            <tr><td><strong>PhoneHarness</strong></td><td><strong>75.0%</strong></td><td><strong>96.7%</strong></td><td>63.3%</td><td><strong>74.3%</strong></td><td><strong>65.5%</strong></td></tr>
           </tbody>
         </table>
       </div>
@@ -574,7 +574,7 @@
       </div>
 
       <div class="result-block">
-        <h3>Different model pairings on PhoneClaw Bench</h3>
+        <h3>Different model pairings on PhoneHarness Bench</h3>
         <p>Same-harness API pairing results over 131 completed tasks, separating app-required and no-app tasks.</p>
         <table>
           <thead>
@@ -602,7 +602,7 @@
       </div>
 
       <div class="result-block">
-        <h3>Safety behavior on PhoneClaw Bench</h3>
+        <h3>Safety behavior on PhoneHarness Bench</h3>
         <p>Dangerous-action refusal rate on safety-oriented tasks. Higher is better.</p>
         <table>
           <thead>
@@ -626,44 +626,44 @@
     <section id="traces" class="card section">
       <span class="pill">Trace Evidence</span>
       <h2>Representative executions show GUI, CLI, and tool actions interleaving with verifier checks.</h2>
-      <p class="lede">Rather than only reporting final answers, PhoneClaw records executable trajectories with selected screenshots, compact non-GUI operation cards, and verifier-side success signals. The clips below are generated from real trace artifacts.</p>
+      <p class="lede">Rather than only reporting final answers, PhoneHarness records executable trajectories with selected screenshots, compact non-GUI operation cards, and verifier-side success signals. The clips below are generated from real trace artifacts.</p>
       <div class="trace-showcase">
         <article class="trace-card">
-          <video autoplay muted loop playsinline controls preload="metadata" aria-label="PhoneClaw MCP plus GUI medicine-price trajectory">
-            <source src="./assets/traces/phoneclaw-demo-02-hybrid-medicine-price.mp4?v=20260511" type="video/mp4" />
-            <img src="./assets/traces/phoneclaw-demo-02-hybrid-medicine-price.gif?v=20260511" alt="PhoneClaw MCP plus GUI medicine-price trajectory" />
+          <video autoplay muted loop playsinline controls preload="metadata" aria-label="PhoneHarness MCP plus GUI medicine-price trajectory">
+            <source src="./assets/traces/phoneharness-demo-02-hybrid-medicine-price.mp4?v=20260511" type="video/mp4" />
+            <img src="./assets/traces/phoneharness-demo-02-hybrid-medicine-price.gif?v=20260511" alt="PhoneHarness MCP plus GUI medicine-price trajectory" />
           </video>
           <h3>MCP web search + GUI delegation + verifier</h3>
           <p>A medicine-price task is decomposed into tool lookup and GUI app exploration, then checked by composite verifier signals.</p>
         </article>
         <div class="trace-grid">
           <article class="trace-card">
-            <video autoplay muted loop playsinline controls preload="metadata" aria-label="PhoneClaw CLI-first device-status trajectory">
-              <source src="./assets/traces/phoneclaw-demo-01-cli-status.mp4?v=20260511" type="video/mp4" />
-              <img src="./assets/traces/phoneclaw-demo-01-cli-status.gif?v=20260511" alt="PhoneClaw CLI-first device-status trajectory" />
+            <video autoplay muted loop playsinline controls preload="metadata" aria-label="PhoneHarness CLI-first device-status trajectory">
+              <source src="./assets/traces/phoneharness-demo-01-cli-status.mp4?v=20260511" type="video/mp4" />
+              <img src="./assets/traces/phoneharness-demo-01-cli-status.gif?v=20260511" alt="PhoneHarness CLI-first device-status trajectory" />
             </video>
             <h3>CLI-first device status probe</h3>
             <p>For deterministic phone-state queries, the agent routes directly through device-side commands instead of opening the GUI.</p>
           </article>
           <article class="trace-card">
-            <video autoplay muted loop playsinline controls preload="metadata" aria-label="PhoneClaw background GUI trajectory on a virtual display">
-              <source src="./assets/traces/phoneclaw-demo-03-virtual-display.mp4?v=20260511" type="video/mp4" />
-              <img src="./assets/traces/phoneclaw-demo-03-virtual-display.gif?v=20260511" alt="PhoneClaw background GUI trajectory on a virtual display" />
+            <video autoplay muted loop playsinline controls preload="metadata" aria-label="PhoneHarness background GUI trajectory on a virtual display">
+              <source src="./assets/traces/phoneharness-demo-03-virtual-display.mp4?v=20260511" type="video/mp4" />
+              <img src="./assets/traces/phoneharness-demo-03-virtual-display.gif?v=20260511" alt="PhoneHarness background GUI trajectory on a virtual display" />
             </video>
             <h3>Background GUI on a virtual display</h3>
             <p>The agent runs a GUI task on a secondary display while the user's foreground screen remains unchanged.</p>
           </article>
         </div>
         <article class="trace-card">
-          <img src="./assets/figures/trace-cases.png?v=20260511" alt="Representative static PhoneClaw trace gallery" />
+          <img src="./assets/figures/trace-cases.png?v=20260511" alt="Representative static PhoneHarness trace gallery" />
           <h3>Static trajectory overview</h3>
-          <p>A compact gallery of representative PhoneClaw executions, keeping screenshots, non-GUI operation cards, and verifier outcomes visible in one static view.</p>
+          <p>A compact gallery of representative PhoneHarness executions, keeping screenshots, non-GUI operation cards, and verifier outcomes visible in one static view.</p>
         </article>
       </div>
     </section>
 
     <footer class="footer">
-      PhoneClaw and PhoneClaw Bench. Built as a static GitHub Pages project site.
+      PhoneHarness and PhoneHarness Bench. Built as a static GitHub Pages project site.
     </footer>
   </main>
 </body>

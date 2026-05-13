@@ -1,6 +1,6 @@
-# PhoneClaw Project Page
+# PhoneHarness Project Page
 
-Static GitHub Pages site for PhoneClaw and PhoneClaw Bench.
+Static GitHub Pages site for PhoneHarness and PhoneHarness Bench.
 
 ## Local Preview
 
@@ -19,4 +19,4 @@ Then open `http://localhost:8080`.
 
 ## Deployment
 
-This directory is intended to be pushed as a standalone GitHub Pages repository, for example `hy-phoneclaw.github.io`.
+This directory is intended to be pushed as a standalone GitHub Pages repository, for example `phoneharness.github.io`.
