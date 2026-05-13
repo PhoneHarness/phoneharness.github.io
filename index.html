@@ -20,6 +20,7 @@
     "@type": "Dataset",
     "name": "PhoneHarness Bench",
     "alternateName": ["PhoneHarness Bench", "PhoneHarness Benchmark"],
+    "url": "https://huggingface.co/datasets/PhoneHarness/phoneharness-bench",
     "description": "PhoneHarness Bench evaluates phone agents on verifiable mobile workflows that may require CLI commands, GUI delegation, and MCP-style host tools. The benchmark is built on PhoneHarness, a mixed-action phone-agent harness with trace logging and verifier-backed side-effect checks.",
     "creator": {
       "@type": "Organization",
@@ -215,10 +216,12 @@
       text-align: left;
     }
     .resource-card {
+      display: block;
       border: 1px solid var(--line);
       border-radius: 2px;
       padding: 14px;
       background: rgba(255, 255, 255, 0.36);
+      text-decoration: none;
     }
     .resource-card strong {
       display: block;
@@ -449,10 +452,10 @@
             <strong>GitHub</strong>
             <span>Placeholder</span>
           </div>
-          <div class="resource-card">
+          <a class="resource-card" href="https://huggingface.co/datasets/PhoneHarness/phoneharness-bench" target="_blank" rel="noopener">
             <strong>Hugging Face Dataset</strong>
-            <span>Placeholder</span>
-          </div>
+            <span>Dataset Repo</span>
+          </a>
           <div class="resource-card">
             <strong>Hugging Face Paper</strong>
             <span>Placeholder</span>
