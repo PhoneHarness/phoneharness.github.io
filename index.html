@@ -425,7 +425,7 @@
         <div class="visual-caption">
           <div class="mini"><strong>124</strong><span>scored tasks</span></div>
           <div class="mini"><strong>30</strong><span>app scenarios</span></div>
-          <div class="mini"><strong>75.0%</strong><span>annotated-split pass rate</span></div>
+          <div class="mini"><strong>CLI · GUI · MCP</strong><span>mixed action space</span></div>
         </div>
       </div>
     </section>
@@ -473,110 +473,33 @@
 
     <section id="results" class="card section">
       <span class="pill">Experimental Findings</span>
-      <h2>Paper-aligned findings on the annotated benchmark split.</h2>
-      <p class="lede">The headline numbers below follow the paper's annotated-split tables. The 97.0% value is the mixed-affordance "GUI or CLI alternative" slice, not the separate same-harness model-pairing result reported later in this section.</p>
+      <h2>Mixed-action routing helps most when tasks expose verifiable alternatives.</h2>
+      <p class="lede">The homepage summarizes the paper without turning individual table cells into headline claims. Detailed pass rates, model pairings, ablations, and safety-policy results are kept in the paper for the exact experimental context.</p>
       <div class="grid-3">
         <div class="result-card">
-          <div class="small-note">Overall pass rate, annotated split</div>
-          <div class="metric">75.0%</div>
-          <p>Reported in the task-type table: PhoneHarness reaches 75.0% overall on the annotated split, compared with 62.1% for the strongest non-PhoneHarness settings in that table.</p>
+          <div class="small-note">Task-type view</div>
+          <div class="metric">Typed</div>
+          <p>Results are grouped by device/system operations, single-app GUI tasks, tool-assisted workflows, and cross-app workflows rather than by a coarse difficulty label.</p>
         </div>
         <div class="result-card">
-          <div class="small-note">Device/system operations</div>
-          <div class="metric">96.7%</div>
-          <p>Reported in the same task-type table. This slice is where deterministic device operations and side-effect verifiers matter most.</p>
+          <div class="small-note">Action-space view</div>
+          <div class="metric">Mixed</div>
+          <p>The gains concentrate on tasks where command-line operations, GUI interaction, and MCP-style tools provide complementary routes to a verifiable side effect.</p>
         </div>
         <div class="result-card">
-          <div class="small-note">GUI or CLI alternative slice</div>
-          <div class="metric">97.0%</div>
-          <p>Reported in the action-space table for tasks where GUI and CLI are alternative routes. Same-harness model pairings use a different table below.</p>
+          <div class="small-note">Model-combination view</div>
+          <div class="metric">Paired</div>
+          <p>Same-harness comparisons separate orchestration-model effects from delegated GUI-worker effects, with full scores reported in the paper.</p>
         </div>
       </div>
 
       <div class="result-block">
-        <h3>Different agent systems on PhoneHarness Bench</h3>
-        <p>Pass-rate scores on the annotated evaluation split, grouped by task type.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Agent</th>
-              <th>Overall</th>
-              <th>Device/system</th>
-              <th>Single-app GUI</th>
-              <th>Tool-assisted</th>
-              <th>Cross-app</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td rowspan="2">Model</td><td>AutoGLM-Phone</td><td>37.1%</td><td>43.3%</td><td>43.3%</td><td>20.0%</td><td>44.8%</td></tr>
-            <tr><td>Seed-Pro-2.0</td><td>62.1%</td><td>83.3%</td><td><strong>76.7%</strong></td><td>28.6%</td><td><strong>65.5%</strong></td></tr>
-            <tr><td rowspan="2">Harness</td><td>MobileClaw</td><td>62.1%</td><td>93.3%</td><td>63.3%</td><td>48.6%</td><td>44.8%</td></tr>
-            <tr><td><strong>PhoneHarness</strong></td><td><strong>75.0%</strong></td><td><strong>96.7%</strong></td><td>63.3%</td><td><strong>74.3%</strong></td><td><strong>65.5%</strong></td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="grid-3">
-        <div class="figure-card">
-          <img src="./assets/figures/success-by-task-type.png?v=c7c23c0" alt="Pass rate by task type" />
-          <h3>Pass rate by task type</h3>
+        <h3>Detailed numbers live in the paper.</h3>
+        <p>The paper reports the exact task-type table, action-space breakdown, same-harness model-combination study, step/runtime analysis, and safety-policy table. Keeping the homepage qualitative avoids mixing table-specific scores with broader project claims.</p>
+        <div class="hero-actions" aria-label="Detailed experimental results">
+          <a class="btn primary" href="assets/paper.pdf">📄 Read the paper tables</a>
+          <a class="btn" href="https://huggingface.co/datasets/PhoneHarness/phoneharness-bench" target="_blank" rel="noopener">🤗 Inspect the dataset</a>
         </div>
-        <div class="figure-card">
-          <img src="./assets/figures/steps-by-task-type.png?v=c7c23c0" alt="Execution steps by task type" />
-          <h3>Execution steps</h3>
-        </div>
-        <div class="figure-card">
-          <img src="./assets/figures/action-type-success.png?v=c7c23c0" alt="Pass rate by action-space type" />
-          <h3>Action-space breakdown</h3>
-        </div>
-      </div>
-
-      <div class="result-block">
-        <h3>Different model pairings on PhoneHarness Bench</h3>
-        <p>Same-harness model-combination results on the 124-task scored split.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Orchestration model</th>
-              <th>GUI model</th>
-              <th>Overall</th>
-              <th>GUI or CLI alternative</th>
-              <th>GUI-primary + optional CLI</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>HY3-preview</td><td>AutoGLM-Phone</td><td>56.5%</td><td>57.8%</td><td>55.8%</td></tr>
-            <tr><td>HY3-preview</td><td>Seed2.0-Pro</td><td>57.3%</td><td>53.3%</td><td>59.3%</td></tr>
-            <tr><td>DeepSeek V4 flash</td><td>AutoGLM-Phone</td><td>68.7%</td><td>64.4%</td><td>70.9%</td></tr>
-            <tr><td>DeepSeek V4 flash</td><td>Seed2.0-Pro</td><td><strong>74.8%</strong></td><td><strong>66.7%</strong></td><td><strong>79.1%</strong></td></tr>
-          </tbody>
-        </table>
-        <div class="figure-card">
-          <img src="./assets/figures/api-pairing-success.png?v=20260511" alt="Pass rate by same-harness model pairing" />
-          <h3>Pass rate by same-harness model pairing</h3>
-          <p>DeepSeek V4 flash is the strongest outer controller under both GUI workers, while GUI-worker choice has smaller impact than orchestration-model choice.</p>
-        </div>
-      </div>
-
-      <div class="result-block">
-        <h3>Safety behavior on PhoneHarness Bench</h3>
-        <p>Dangerous-action refusal rate on safety-oriented tasks. Higher is better.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Orchestration model</th>
-              <th>GUI model</th>
-              <th>Refusal rate</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>DeepSeek V4</td><td>AutoGLM-Phone</td><td>80.0%</td></tr>
-            <tr><td>DeepSeek V4</td><td>Seed 2.0</td><td>86.7%</td></tr>
-            <tr><td>HY3-preview</td><td>AutoGLM-Phone</td><td><strong>90.0%</strong></td></tr>
-            <tr><td>HY3-preview</td><td>Seed 2.0</td><td><strong>90.0%</strong></td></tr>
-          </tbody>
-        </table>
       </div>
     </section>
 
