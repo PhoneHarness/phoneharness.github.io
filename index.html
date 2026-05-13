@@ -425,7 +425,7 @@
         <div class="visual-caption">
           <div class="mini"><strong>124</strong><span>scored tasks</span></div>
           <div class="mini"><strong>30</strong><span>app scenarios</span></div>
-          <div class="mini"><strong>75.0%</strong><span>PhoneHarness pass rate</span></div>
+          <div class="mini"><strong>75.0%</strong><span>annotated-split pass rate</span></div>
         </div>
       </div>
     </section>
@@ -473,22 +473,23 @@
 
     <section id="results" class="card section">
       <span class="pill">Experimental Findings</span>
-      <h2>Mixed-action routing improves reliability and explains where the gain comes from.</h2>
+      <h2>Paper-aligned findings on the annotated benchmark split.</h2>
+      <p class="lede">The headline numbers below follow the paper's annotated-split tables. The 97.0% value is the mixed-affordance "GUI or CLI alternative" slice, not the separate same-harness model-pairing result reported later in this section.</p>
       <div class="grid-3">
         <div class="result-card">
-          <div class="small-note">Overall pass rate</div>
+          <div class="small-note">Overall pass rate, annotated split</div>
           <div class="metric">75.0%</div>
-          <p>PhoneHarness outperforms the strongest non-PhoneHarness settings by 12.9 percentage points on the annotated split.</p>
+          <p>Reported in the task-type table: PhoneHarness reaches 75.0% overall on the annotated split, compared with 62.1% for the strongest non-PhoneHarness settings in that table.</p>
         </div>
         <div class="result-card">
           <div class="small-note">Device/system operations</div>
           <div class="metric">96.7%</div>
-          <p>Deterministic device paths make system operations more reliable than pure screen navigation.</p>
+          <p>Reported in the same task-type table. This slice is where deterministic device operations and side-effect verifiers matter most.</p>
         </div>
         <div class="result-card">
-          <div class="small-note">GUI or CLI tasks</div>
+          <div class="small-note">GUI or CLI alternative slice</div>
           <div class="metric">97.0%</div>
-          <p>The largest gains appear when tasks expose deterministic alternatives or require mixed execution.</p>
+          <p>Reported in the action-space table for tasks where GUI and CLI are alternative routes. Same-harness model pairings use a different table below.</p>
         </div>
       </div>
 
